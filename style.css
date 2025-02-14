@@ -1,0 +1,172 @@
+body{
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background: #fae1dd;
+}
+
+.heart-rain-title { /* Added */
+    position: absolute;
+    top: 20px;
+    font-size: 2.5rem;
+    font-family: 'Pacifico', cursive;
+    color: #f08080;
+    z-index: 10;
+}
+
+.heart { /* Added for heart rain effect */
+    position: fixed;
+    font-size: 1.5rem;
+    top: -1vh;
+    transform: translateY(0);
+    animation: fall 3s linear forwards;
+}
+
+@keyframes fall { /* Added fall animation */
+    from {
+        transform: translateY(0vh) translateX(-10vw); 
+    }
+    to {
+        transform: translateY(105vh) translateX(10vw); 
+    }
+}
+.container{
+    position: relative;
+}
+.valentines{
+    position: relative;
+    top: 50px;
+    cursor: pointer;
+    animation: up 3s linear infinite;
+}
+.envelope{
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background: #f08080;
+    display: grid;
+    place-items: center;
+}
+.envelope::before{
+    content: '';
+    position: absolute;
+    width: 212px;
+    height: 212px;
+    background: #f08080;
+    transform: rotate(45deg);
+    top: -105px;
+    left: 44px;
+    border-radius: 30px 0 0 0;
+}
+.front{
+    position: absolute;
+    border-right: 180px solid #f4978e;
+    border-top: 95px solid transparent;
+    border-bottom: 100px solid transparent;
+    left: 120px;
+    top: 5px;
+    width: 0;
+    height: 0;
+    z-index: 10;
+}
+.front::before{
+    position: absolute;
+    content: '';
+    border-left: 300px solid #fda996;
+    border-top: 195px solid transparent;
+    left: -120px;
+    top: -95px;
+}
+button {
+    padding: 10px 20px;
+    background-color: #f08080; /* Pinkish background color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    transition: background-color 0.3s ease;
+    margin-top: 150px; /* Increase this value to lower the button */
+    margin-left: 90px; /* Adjust horizontal position to the right */
+}
+
+button:hover {
+    background-color: #ff6f61; /* Darker pink on hover */
+}
+
+.card{
+    position: relative;
+    width: 250px;
+    height: 180px;
+    background: #fff;
+    border-radius: 2px;
+    display: grid;
+    place-items: center;
+    transition: 1s;
+}
+.card::before{
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 2px solid #ff6f61;
+    border-style: dashed;
+}
+.card.open {
+    transform: translateY(-100px); /* Moves the card up when the button is pressed */
+}
+.card .text{
+    font-family: 'Brush Script MT', cursive;
+    font-size: 28px;
+    text-align: center;
+    line-height: 25px;
+    color: #ff6f61;
+}
+
+
+.heart-rain {
+    position: fixed;
+    font-size: 1.5rem;
+    top: -1vh;
+    transform: translateY(0);
+    animation: fall 3s linear forwards;
+}
+@keyframes fall {
+    from {
+        transform: translateY(0vh) translateX(-10vw);
+    }
+    to {
+        transform: translateY(105vh) translateX(10vw);
+    }
+}
+@keyframes up{
+    0%, 100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-30px);
+    }
+}
+.valentines::before{
+    content: '';
+    position: absolute;
+    width: 330px;
+    height: 25px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .3);
+    top: 265px;
+    left: -15px;
+    animation: scale 3s linear infinite;
+}
+@keyframes scale{
+    0%, 100%{
+        transform: scaleX(1);
+    }
+    50%{
+        transform: scaleX(.85);
+    }
+}
+
